@@ -1,5 +1,7 @@
 import logo from "../../assets/images/logo.png"
-import {NavLink} from "react-router-dom";
+import userImg from "../../assets/images/doctor-img01.png"
+import {BiMenu} from  "react-icons/bi";
+import {Link, NavLink} from "react-router-dom";
 
 
 const navLinks = [
@@ -33,6 +35,8 @@ const Header = () => {
                     <div>
                         <img src={logo} alt=""/>
                     </div>
+
+                    {/*========menu========================*/}
                     <div className={"navigation "}>
                         <ul className={"flex  items-center gap-[2.7rem]"}>
                             {
@@ -45,8 +49,33 @@ const Header = () => {
                                 </li>)
                             }
                         </ul>
-
                     </div>
+
+
+                    {/*========nav right========================*/}
+                    <div className={"flex items-center gap-4"}>
+                        <div>
+                            <Link to={"/"}>
+                                <figure className={"w-[35px] h-[35px] rounded-full cursor-pointer"}>
+                                    <img src={userImg} alt="" className={"rounded-full w-full"}/>
+                                </figure>
+                            </Link>
+                        </div>
+
+                        <Link to={"/login"}>
+                            <button
+                                className={"bg-primaryColor text-white py-2 px-6 font-[600] rounded-[50px] flex items-center justify-center h-[44px]"}>Login
+                            </button>
+                        </Link>
+
+                        <div className={"md:hidden"}>
+                            <BiMenu className={"w-6 h-6 cursor-pointer"}/>
+                        </div>
+                    </div>
+
+
+
+
                 </div>
             </div>
 
