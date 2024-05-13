@@ -1,3 +1,6 @@
+import  heroImg from '../assets/images/hero-img01.png'
+import  heroImg2 from '../assets/images/hero-img02.png'
+import  heroImg3 from '../assets/images/hero-img03.png'
 const Home = () => {
     return (
         <div>
@@ -12,7 +15,8 @@ const Home = () => {
 
                                 <p className={"text_para"}>
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur excepturi
-                                    omnis qui, quidem sapiente sunt suscipit. Animi architecto blanditiis earum explicabo
+                                    omnis qui, quidem sapiente sunt suscipit. Animi architecto blanditiis earum
+                                    explicabo
                                     fugiat harum impedit ipsa, magni neque perspiciatis sunt voluptatum.
                                 </p>
                                 <button className={"btn"}>Request Appointment</button>
@@ -41,10 +45,25 @@ const Home = () => {
                             </div>
 
                         </div>
+
+
+                        <div>
+                            {/*========hero section============*/}
+
+                            <div className={"flex gap-[30px]  justify-end"}>
+                                <div>
+                                    <img src={heroImg} alt=""/>
+                                </div>
+                                <div className={"mt-[30px]"}>
+                                    <img src={heroImg2} alt="" className={"w-full mb-[30px]"}/>
+                                    <img src={heroImg3} className={"w-full"} alt=""/>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
-
+            {/*==============hero section end=============================*/}
         </div>
     )
 }
