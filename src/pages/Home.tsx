@@ -1,6 +1,11 @@
 import  heroImg from '../assets/images/hero-img01.png'
 import  heroImg2 from '../assets/images/hero-img02.png'
 import  heroImg3 from '../assets/images/hero-img03.png'
+import  icon1 from '../assets/images/icon01.png'
+import  icon2 from '../assets/images/icon02.png'
+import  icon3 from '../assets/images/icon03.png'
+import {Link} from "react-router-dom";
+import {BsArrowRight} from "react-icons/bs";
 const Home = () => {
     return (
         <div>
@@ -64,6 +69,86 @@ const Home = () => {
                 </div>
             </section>
             {/*==============hero section end=============================*/}
+
+            {/*==============hero service section start=============================*/}
+            <section>
+                <div className="container">
+                    <div className={"lg:w-[470px] mx-auto"}>
+                        <h2 className={"heading text-center"}>Providing the best Medical service</h2>
+                        <p className={"text_para text-center"}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam</p>
+                    </div>
+                </div>
+
+                <div
+                    className={"grid  grid-cols-1 md:grid-cols-2  lg:grid-cols-3  gap-5 mt-[30px] lg:gap-[30px] lg:mt-[50px]"}>
+                    <div className={"py-[30px] px-5 "}>
+                        <div className={"flex  items-center justify-center"}>
+                            <img src={icon1} alt=""/>
+                        </div>
+                        <div className={"mt-[30px]"}>
+                            <h2 className={"text-[26px] leading-9 text-textColor font-[700]  text-center"}>Find a
+                                Doctor</h2>
+                            <p className={"text-center text-[16px] leading-7 text-textColor font-[400] mt-4 "}>Lorem
+                                ipsum dolor sit amet, consectetur adipisicing elit.
+                                A accusantium aperiam autem dolore fugit, id illo non .</p>
+
+
+                            <Link to={'/doctors'}
+                                  className={"w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] " +
+                                      " mx-auto flex items-center justify-center  group hover:bg-primaryColor hover:border-none"}>
+                                <BsArrowRight className={"group-hover:text-white w-6"}/>
+                            </Link>
+                        </div>
+
+                    </div>
+
+                    <div className={"py-[30px] px-5 "}>
+                        <div className={"flex  items-center justify-center"}>
+                            <img src={icon2} alt=""/>
+                        </div>
+                        <div className={"mt-[30px]"}>
+                            <h2 className={"text-[26px] leading-9 text-textColor font-[700]  text-center"}>Find a
+                                Doctor</h2>
+                            <p className={"text-center text-[16px] leading-7 text-textColor font-[400] mt-4 "}>Lorem
+                                ipsum dolor sit amet, consectetur adipisicing elit.
+                                A accusantium aperiam autem dolore fugit, id illo non .</p>
+
+
+                            <Link to={'/doctors'}
+                                  className={"w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] " +
+                                      " mx-auto flex items-center justify-center  group hover:bg-primaryColor hover:border-none"}>
+                                <BsArrowRight className={"group-hover:text-white w-6"}/>
+                            </Link>
+                        </div>
+
+                    </div>
+
+                    <div className={"py-[30px] px-5 "}>
+                        <div className={"flex  items-center justify-center"}>
+                            <img src={icon3} alt=""/>
+                        </div>
+                        <div className={"mt-[30px]"}>
+                            <h2 className={"text-[26px] leading-9 text-textColor font-[700]  text-center"}>Find a
+                                Doctor</h2>
+                            <p className={"text-center text-[16px] leading-7 text-textColor font-[400] mt-4 "}>Lorem
+                                ipsum dolor sit amet, consectetur adipisicing elit.
+                                A accusantium aperiam autem dolore fugit, id illo non .</p>
+
+
+                            <Link to={'/doctors'}
+                                  className={"w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] " +
+                                      " mx-auto flex items-center justify-center  group hover:bg-primaryColor hover:border-none"}>
+                                <BsArrowRight className={"group-hover:text-white w-6"}/>
+                            </Link>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+            {/*==============hero service section end=============================*/}
         </div>
     )
 }
