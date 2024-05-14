@@ -14,6 +14,7 @@ import About from "../components/about/About.tsx";
 import ServicesList from "../components/services/ServicesList.tsx";
 import DoctorList from "../components/doctor/DoctorList.tsx";
 import FaqList from "../components/faq/FaqList.tsx";
+import Testimonial from "../components/testimonial/Testimonial.tsx";
 
 const Home = () => {
     return (
@@ -198,36 +199,42 @@ const Home = () => {
                                     deserunt dolorem expedita
                                 </li>
 
-                                <Link to={"/"}><button className={"btn"}>Learn More</button></Link>
+                                <Link to={"/"}>
+                                    <button className={"btn"}>Learn More</button>
+                                </Link>
                             </ul>
                         </div>
 
                         {/*==================feature image==================*/}
                         <div className={" relative flex justify-end z-20 mt-[50px] lg:mt-0 xl:w-[770px]  "}>
-                            <img src={featureImg}  className={"w-3/3"} alt=""/>
+                            <img src={featureImg} className={"w-3/3"} alt=""/>
 
-                          <div className={"w-[150px] lg:w-[240px] bg-white absolute   bottom-[50px]  left-[150px] md:py-1 md:px-1  hidden  xl:block  rounded-[10px]  px-2 py-2 "}>
-                              <div className={"flex items-center justify-between "}>
-                                  <div className={"flex items-center gap-[6px] lg:gap-3 px-5 py-2"}>
-                                      <p className={"text-[10px] leading-[10px] lg:text-[14px] lg:leading-5 text-textColor"}>Tue ,24</p>
-                                      <p className={"text-[10px] leading-[10px] lg:text-[14px] lg:leading-7 text-textColor font-[400]"}> 10.00AM</p>
-                                  </div>
-                                  <span className={"w-5 h-5 lg:w-[34px] lg:h-[34px] flex items-center justify-center bg-yellowColor rounded py-2 px-1"}>
+                            <div
+                                className={"w-[150px] lg:w-[240px] bg-white absolute   bottom-[50px]  left-[150px] md:py-1 md:px-1  hidden  xl:block  rounded-[10px]  px-2 py-2 "}>
+                                <div className={"flex items-center justify-between "}>
+                                    <div className={"flex items-center gap-[6px] lg:gap-3 px-5 py-2"}>
+                                        <p className={"text-[10px] leading-[10px] lg:text-[14px] lg:leading-5 text-textColor"}>Tue
+                                            ,24</p>
+                                        <p className={"text-[10px] leading-[10px] lg:text-[14px] lg:leading-7 text-textColor font-[400]"}> 10.00AM</p>
+                                    </div>
+                                    <span
+                                        className={"w-5 h-5 lg:w-[34px] lg:h-[34px] flex items-center justify-center bg-yellowColor rounded py-2 px-1"}>
                                       <img src={videoImg} alt=""/>
                                   </span>
-                              </div>
+                                </div>
 
-                              <div className={"w-[65px]  lg:w-[96px] bg-[#CCF0F3] py-1 px-2 lg:py-[6px] lg:px-[10px] text-[8px] leading-[8px] lg:text-[12px] lg:leading-4 text-irisBlueColor font-[500] mt-2 lg:mt-4 rounded-full"}>
-                                  Consultation
-                              </div>
+                                <div
+                                    className={"w-[65px]  lg:w-[96px] bg-[#CCF0F3] py-1 px-2 lg:py-[6px] lg:px-[10px] text-[8px] leading-[8px] lg:text-[12px] lg:leading-4 text-irisBlueColor font-[500] mt-2 lg:mt-4 rounded-full"}>
+                                    Consultation
+                                </div>
 
-                              <div className={"flex items-center  gap-6 mt-3"}>
-                                  <img src={avatarIcon} alt=""/>
-                                  <h4 className={"font-[700] text-textColor"}> Mohammed Salman</h4>
-                              </div>
+                                <div className={"flex items-center  gap-6 mt-3"}>
+                                    <img src={avatarIcon} alt=""/>
+                                    <h4 className={"font-[700] text-textColor"}> Mohammed Salman</h4>
+                                </div>
 
 
-                          </div>
+                            </div>
 
                         </div>
 
@@ -271,6 +278,20 @@ const Home = () => {
             {/*====================faq section=========================*/}
 
 
+            {/*====================intestinal  section=========================*/}
+            <section>
+                <div className="container">
+                    <div className={"xl:w-[470px] mx-auto"}>
+                        <h2 className={"heading text-center"}>Our Great Doctor</h2>
+
+                        <p className={"text_para text-center"}>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Adipisci aliquam</p>
+                    </div>
+                    <Testimonial/>
+                </div>
+            </section>
+
+            {/*====================intestinal  section=========================*/}
         </div>
     )
 }
