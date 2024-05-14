@@ -11,6 +11,7 @@ import {Link} from "react-router-dom";
 import {BsArrowRight} from "react-icons/bs";
 import About from "../components/about/About.tsx";
 import ServicesList from "../components/services/ServicesList.tsx";
+import DoctorList from "../components/doctor/DoctorList.tsx";
 
 const Home = () => {
     return (
@@ -234,6 +235,23 @@ const Home = () => {
             </section>
 
             {/*====================feature section=========================*/}
+
+
+            {/*====================our great doctor=========================*/}
+            <section>
+                <div className="container">
+                    <div className={"xl:w-[470px] mx-auto"}>
+                        <h2 className={"heading text-center"}>Our Great Doctor</h2>
+
+                        <p className={"text_para text-center"}>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Adipisci aliquam</p>
+                    </div>
+                    <DoctorList/>
+                </div>
+            </section>
+
+            {/*====================our great doctor=========================*/}
+
 
         </div>
     )
