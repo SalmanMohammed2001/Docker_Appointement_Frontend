@@ -1,13 +1,14 @@
-import  heroImg from '../assets/images/hero-img01.png'
-import  heroImg2 from '../assets/images/hero-img02.png'
-import  heroImg3 from '../assets/images/hero-img03.png'
-import  icon1 from '../assets/images/icon01.png'
-import  icon2 from '../assets/images/icon02.png'
-import  icon3 from '../assets/images/icon03.png'
+import heroImg from '../assets/images/hero-img01.png'
+import heroImg2 from '../assets/images/hero-img02.png'
+import heroImg3 from '../assets/images/hero-img03.png'
+import icon1 from '../assets/images/icon01.png'
+import icon2 from '../assets/images/icon02.png'
+import icon3 from '../assets/images/icon03.png'
 import {Link} from "react-router-dom";
 import {BsArrowRight} from "react-icons/bs";
 import About from "../components/about/About.tsx";
 import ServicesList from "../components/services/ServicesList.tsx";
+
 const Home = () => {
     return (
         <div>
@@ -77,7 +78,8 @@ const Home = () => {
                 <div className="container">
                     <div className={"lg:w-[470px] mx-auto"}>
                         <h2 className={"heading text-center"}>Providing the best Medical service</h2>
-                        <p className={"text_para text-center"}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam</p>
+                        <p className={"text_para text-center"}>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Adipisci aliquam</p>
                     </div>
                 </div>
 
@@ -171,6 +173,37 @@ const Home = () => {
             </section>
 
             {/*====================service section=========================*/}
+
+
+            {/*====================feature section=========================*/}
+            <section>
+                <div className="container">
+                    <div className={"flex justify-between items-center flex-col lg:flex-row"}>
+                        <div className={"xl:w-[670px]"}>
+                            <h2 className={"heading"}>
+                                Get Virtual treatment
+                            </h2>
+                            <ul className={"pl-4"}>
+                                <li className={"text_para"}> 1. Schedule the appointment directly</li>
+                                <li className={"text_para"}> 2. Search for you physician here and contact their office
+                                </li>
+                                <li className={"text_para"}> 3. Lorem ipsum dolor sit amet, consectetur adipisicing
+                                    elit. Accusamus beatae cumque
+                                    deserunt dolorem expedita
+                                </li>
+
+                                <Link to={"/"}><button className={"btn"}>Learn More</button></Link>
+                            </ul>
+                        </div>
+
+                        <div></div>
+
+                    </div>
+                </div>
+
+            </section>
+
+            {/*====================feature section=========================*/}
 
         </div>
     )
