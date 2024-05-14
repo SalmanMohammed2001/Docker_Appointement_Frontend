@@ -4,6 +4,9 @@ import heroImg3 from '../assets/images/hero-img03.png'
 import icon1 from '../assets/images/icon01.png'
 import icon2 from '../assets/images/icon02.png'
 import icon3 from '../assets/images/icon03.png'
+import featureImg from '../assets/images/feature-img.png'
+import videoImg from '../assets/images/video-icon.png'
+import avatarIcon from '../assets/images/avatar-icon.png'
 import {Link} from "react-router-dom";
 import {BsArrowRight} from "react-icons/bs";
 import About from "../components/about/About.tsx";
@@ -179,7 +182,7 @@ const Home = () => {
             <section>
                 <div className="container">
                     <div className={"flex justify-between items-center flex-col lg:flex-row"}>
-                        <div className={"xl:w-[670px]"}>
+                        <div className={"xl:w-[670px] "}>
                             <h2 className={"heading"}>
                                 Get Virtual treatment
                             </h2>
@@ -196,7 +199,34 @@ const Home = () => {
                             </ul>
                         </div>
 
-                        <div></div>
+                        {/*==================feature image==================*/}
+                        <div className={" relative flex justify-end z-20 mt-[50px] lg:mt-0 xl:w-[770px]  "}>
+                            <img src={featureImg}  className={"w-3/3"} alt=""/>
+
+                          <div className={"w-[150px] lg:w-[240px] bg-white absolute   bottom-[50px]  left-[150px] md:py-1 md:px-1  hidden  xl:block  rounded-[10px]  px-2 py-2 "}>
+                              <div className={"flex items-center justify-between "}>
+                                  <div className={"flex items-center gap-[6px] lg:gap-3 px-5 py-2"}>
+                                      <p className={"text-[10px] leading-[10px] lg:text-[14px] lg:leading-5 text-textColor"}>Tue ,24</p>
+                                      <p className={"text-[10px] leading-[10px] lg:text-[14px] lg:leading-7 text-textColor font-[400]"}> 10.00AM</p>
+                                  </div>
+                                  <span className={"w-5 h-5 lg:w-[34px] lg:h-[34px] flex items-center justify-center bg-yellowColor rounded py-2 px-1"}>
+                                      <img src={videoImg} alt=""/>
+                                  </span>
+                              </div>
+
+                              <div className={"w-[65px]  lg:w-[96px] bg-[#CCF0F3] py-1 px-2 lg:py-[6px] lg:px-[10px] text-[8px] leading-[8px] lg:text-[12px] lg:leading-4 text-irisBlueColor font-[500] mt-2 lg:mt-4 rounded-full"}>
+                                  Consultation
+                              </div>
+
+                              <div className={"flex items-center  gap-6 mt-3"}>
+                                  <img src={avatarIcon} alt=""/>
+                                  <h4 className={"font-[700] text-textColor"}> Mohammed Salman</h4>
+                              </div>
+
+
+                          </div>
+
+                        </div>
 
                     </div>
                 </div>
