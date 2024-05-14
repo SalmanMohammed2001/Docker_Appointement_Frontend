@@ -42,6 +42,15 @@ const Footer = () => {
                             <a href="#"><i className="fa-brands fa-linkedin-in"></i></a>
                         </div>
                     </div>
+                    <div className="footer-col">
+                        <h4>follow us</h4>
+                        <div className="social-links">
+                            <a href="#"><i className="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i className="fa-brands fa-x-twitter"></i></a>
+                            <a href="#"><i className="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i className="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
                 </div>
             </footer>
         </div>
