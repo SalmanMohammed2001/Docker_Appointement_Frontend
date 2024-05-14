@@ -7,6 +7,7 @@ import  icon3 from '../assets/images/icon03.png'
 import {Link} from "react-router-dom";
 import {BsArrowRight} from "react-icons/bs";
 import About from "../components/about/About.tsx";
+import ServicesList from "../components/services/ServicesList.tsx";
 const Home = () => {
     return (
         <div>
@@ -165,6 +166,7 @@ const Home = () => {
                         <p className={"text_para text-center"}>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                             Adipisci aliquam</p>
                     </div>
+                    <ServicesList/>
                 </div>
             </section>
 
