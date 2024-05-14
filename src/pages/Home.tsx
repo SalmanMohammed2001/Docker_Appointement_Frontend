@@ -155,6 +155,21 @@ const Home = () => {
 
             <About/>
             {/*====================about=========================*/}
+
+
+            {/*====================service section=========================*/}
+            <section>
+                <div className="container">
+                    <div className={"xl:w-[470px] mx-auto"}>
+                        <h2 className={"heading text-center"}>Our Medical Service</h2>
+                        <p className={"text_para text-center"}>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Adipisci aliquam</p>
+                    </div>
+                </div>
+            </section>
+
+            {/*====================service section=========================*/}
+
         </div>
     )
 }
