@@ -2,6 +2,7 @@
 import DoctorCard from "../../components/doctor/DoctorCard.tsx";
 // @ts-ignore
 import {doctors} from "../../assets/data/doctors";
+import Testimonial from "../../components/testimonial/Testimonial.tsx";
 
 
 const Doctors = () => {
@@ -32,6 +33,20 @@ const Doctors = () => {
                         </div>
                     </div>
                 </section>
+                {/*====================intestinal  section=========================*/}
+                <section>
+                    <div className="container">
+                        <div className={"xl:w-[470px] mx-auto"}>
+                            <h2 className={"heading text-center"}>Our Great Doctor</h2>
+
+                            <p className={"text_para text-center"}>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Adipisci aliquam</p>
+                        </div>
+                        <Testimonial/>
+                    </div>
+                </section>
+
+                {/*====================intestinal  section=========================*/}
             </div>
         )
 }
