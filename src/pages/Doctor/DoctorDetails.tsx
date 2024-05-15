@@ -3,7 +3,7 @@ import StarImg from '../../assets/images/Star.png'
 import {useState} from "react";
 
 import Feedback from "./Feedback.tsx";
-import About from "./About.tsx";
+import DoctorAbout from "./DoctorAbout.tsx";
 const DoctorDetails = () => {
 
     const [tab,setTab] = useState('about')
@@ -46,7 +46,7 @@ const DoctorDetails = () => {
 
                             <div className={"mt-[50px]"}>
                                 {
-                                    tab=='about'&& <About/>
+                                    tab=='about'&& <DoctorAbout/>
                                 }
                                 {
                                     tab=='feedback'&& <Feedback/>
