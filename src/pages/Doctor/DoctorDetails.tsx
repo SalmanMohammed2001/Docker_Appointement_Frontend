@@ -4,6 +4,7 @@ import {useState} from "react";
 
 import Feedback from "./Feedback.tsx";
 import DoctorAbout from "./DoctorAbout.tsx";
+import SidePanel from "./SidePanel.tsx";
 const DoctorDetails = () => {
 
     const [tab,setTab] = useState('about')
@@ -56,8 +57,7 @@ const DoctorDetails = () => {
 
                         </div>
 
-
-
+                        <SidePanel/>
 
                     </div>
                 </div>

@@ -1,6 +1,10 @@
 import  avatar from '../../assets/images/avatar-icon.png'
 import {AiFillStar} from "react-icons/ai";
+import {useState} from "react";
+import FeedbackFrom from "./FeedbackFrom.tsx";
 const FeedbackPage=()=> {
+    const[feedback,setFeedback]=useState(false)
+
     return(
         <div>
             <div className={"mt-[50px]"}>
@@ -27,9 +31,14 @@ const FeedbackPage=()=> {
                     </div>
                 </div>
             </div>
-            <div className={"text-center"}>
-                <button className={"btn"}> Give Review</button>
-            </div>
+            {
+                !feedback && <div className={"text-center"}>
+                    <button className={"btn"} onClick={() => setFeedback(true)}> Give Review</button>
+                </div>}
+
+            {
+                feedback && <FeedbackFrom/>
+            }
         </div>
     )
 }
