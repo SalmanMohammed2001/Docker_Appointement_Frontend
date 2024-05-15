@@ -14,7 +14,7 @@ const Login = () => {
     }
         return(
             <section>
-                <div className={" w-full max-w-[570px] mx-auto  rounded-md shadow-md md:p-10 "}>
+                <div className={" w-full max-w-[570px] mx-auto  p-5 rounded-md shadow-md md:p-10 "}>
                     <h1 className={"text-headingColor font-bold leading-9 text-[22px] mb-10"}>Hello! <span
                         className={"text-primaryColor"}>Welcome</span> Back </h1>
 
