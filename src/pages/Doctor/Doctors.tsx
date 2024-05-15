@@ -1,4 +1,7 @@
 
+import DoctorCard from "../../components/doctor/DoctorCard.tsx";
+// @ts-ignore
+import {doctors} from "../../assets/data/doctors";
 
 
 const Doctors = () => {
@@ -14,7 +17,20 @@ const Doctors = () => {
                           <button className={"btn mt-0 rounded-[0px] rounded-r-md"}>Search</button>
                       </div>
                     </div>
+                </section>
 
+                <section>
+                    <div className="container">
+                        <div className={"grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5"}>
+                            {
+                                doctors.map((doctor: any, index: number) => {
+                                    return(
+                                        <DoctorCard doctor={doctor} key={index} />
+                                    )
+                                })
+                            }
+                        </div>
+                    </div>
                 </section>
             </div>
         )
