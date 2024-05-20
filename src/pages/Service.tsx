@@ -2,6 +2,7 @@
 
 import ServicesCard from "../components/services/ServicesCard.tsx";
 import  {services} from "../assets/data/services"
+import {Key} from "react";
 const Service = () => {
     return (
         <section>

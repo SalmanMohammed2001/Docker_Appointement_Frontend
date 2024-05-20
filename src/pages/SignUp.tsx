@@ -1,65 +1,70 @@
 import signup from '../assets/images/signup.gif'
-import {Link} from "react-router-dom";
-import  avatar from '../assets/images/avatar-icon.png'
+import {Link, useNavigate} from "react-router-dom";
+import avatar from '../assets/images/avatar-icon.png'
 import {useState} from "react";
+import axios from 'axios'
+import uploadImageCloudinary from "../utils/uploadImageCloudinary.ts";
+import {BASE_URL} from "../config.ts";
+import {toast} from "react-toastify";
+import {HashLoader} from "react-spinners";
 
 const SignUp = () => {
 
-    const[selectFile,setSelectFile] = useState(null);
-    const[previewUrl,setPreviewUrl] = useState("");
+    const [selectFile, setSelectFile] = useState(null);
+    const [previewUrl, setPreviewUrl] = useState("");
+    const[loading,setLoading] = useState(false);
 
     const [formData, setFormData] = useState({
-        name:'',
-        email:'',
-        password:'',
-        photo:selectFile,
-        gender:'',
-        role:'patient'
+        name: '',
+        email: '',
+        password: '',
+        photo: selectFile,
+        gender: '',
+        role: 'patient'
     });
+
+    const navigate=useNavigate();
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setFormData({...formData, [e.target.name]: e.target.value});
-
     }
 
-    const handleFileInpurChange = async (e: any) => {
-        const  file:any=e.target.files[0]
-
-        console.log(file)
-       /* const  data=   await uploadImageCloudinary(file)
-
-
-        setPreviewUrl(data.url)
-        setSelectFile(data.url)
-        setFormData({...formData,photo:data.url})*/
+    const handleFileInputChange = async (e: any) => {
+        const file: any = e.target.files[0]
+        const data = await uploadImageCloudinary(file)
+         setPreviewUrl(data.url)
+         setSelectFile(data.url)
+         setFormData({...formData,photo:data.url})
 
     }
-    const submitHandle=async  (event: { preventDefault: () => void; })=>{
+    const submitHandle = async (event: { preventDefault: () => void; }) => {
         event.preventDefault()
-       /* try{
+        setLoading(true);
 
-            //     console.log(formData)
 
-            axios.post(`${BASE_URL}/auth/register`, formData).then((res)=>{
-                if (res){
-                    setLoading(false)
-                    toast.success(res.data.message)
-                    navigate('/login')
+        try{
+       const   res  =   await  axios.post(`${BASE_URL}/auth/register`,formData,{
+                headers:{
+                    'Content-Type': 'application/json'
                 }
             })
+          if(res.status === 200){
+                setLoading(false);
+              toast.success(res.data.message)
+                navigate('/login')
+          }
+        }catch(error){
+           // @ts-ignore
+             toast.error("User Already Exists")
+            setLoading(false);
 
+        }
 
-
-
-        }catch (error){
-            // @ts-ignore
-            toast.error(error.message)
-            setLoading(false)
-
-        }*/
 
     }
 
+    // @ts-ignore
+    // @ts-ignore
     // @ts-ignore
     return (
         <section className={"px-5  xl:px-0"}>
@@ -120,6 +125,7 @@ const SignUp = () => {
                                         name={"role"} value={formData.role} onChange={handleInputChange}
                                         className={"text-headingColor font-semibold text-[15px] leading-7 px-4 py-3 focus:outline-none"}
                                     >
+                                        <option > Select</option>
                                         <option value={"patient"}> Patient</option>
                                         <option value={"doctor"}> Doctor</option>
 
@@ -142,17 +148,17 @@ const SignUp = () => {
 
 
                             <div className={"mb-5 flex items-center gap-3"}>
-                                <figure
+                                { selectFile && <figure
                                     className={"w-[60px] h-[60px] rounded-full border-2 border-primaryColor border-solid flex items-center justify-center"}>
-                                    <img src={avatar} alt="" className={"w-full rounded-full "}/>
-                                </figure>
+                                    <img src={previewUrl} alt="" className={"w-full rounded-full "}/>
+                                </figure>}
 
                                 <div className={"relative w-[160px] h-[50px]"}>
                                     <input
                                         type="file"
                                         name={"photo"}
                                         id={"customFile"}
-                                        onChange={handleFileInpurChange}
+                                        onChange={handleFileInputChange}
                                         className={"absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer"}
                                     />
                                     <label htmlFor="customFile"
@@ -167,8 +173,10 @@ const SignUp = () => {
                             </div>
 
                             <div className={"mt-7"}>
-                                <button type={"submit"}
-                                        className={"w-full bg-primaryColor text-white text-[16px] px-4 py-3 rounded-lg "}>Signup
+                                <button
+                                    disabled={loading && true}
+                                    type={"submit"}
+                                        className={"w-full bg-primaryColor text-white text-[16px] px-4 py-3 rounded-lg "}>{loading ? <HashLoader size={35} color='#ffffff'/> : 'Signup'}
                                 </button>
                             </div>
 
