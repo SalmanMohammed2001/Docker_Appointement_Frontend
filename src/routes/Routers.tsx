@@ -24,8 +24,8 @@ const routers  =()=>{
                       <Route path="/register"  element={<SignUp/>} />
                       <Route path="/contact"  element={<Contact/>} />
                       <Route path="/service"  element={<Service/>} />
-                      <Route path="/users/profile/me"  element={<ProtectedRoutes allowRoutes={['patient']}> <MyAccount/> </ProtectedRoutes> } />
-                      <Route path="/doctors/profile/me"  element={ <ProtectedRoutes allowRoutes={['doctor']}> <Dashboard/> </ProtectedRoutes>} />
+                      <Route path={"/users/profile/me"} element={<ProtectedRoutes allowRoles={["patient"]}> <MyAccount/></ProtectedRoutes> }/>
+                      <Route path={"/doctors/profile/me"} element={ <ProtectedRoutes allowRoles={["doctor"]}> <Dashboard/>  </ProtectedRoutes>  }/>
                   </Routes>
             </div>
         )

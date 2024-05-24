@@ -44,8 +44,8 @@ export const AuthContext=({children})=>{
 
     useEffect(()=>{
     localStorage.setItem('user',JSON.stringify(state.user));
-    localStorage.setItem('token',JSON.stringify(state.token))
-    localStorage.setItem('role',JSON.stringify(state.role))
+    localStorage.setItem('token',state.token)
+    localStorage.setItem('role',state.role)
     },[state])
 
     return(

@@ -3,14 +3,14 @@ import {authContext} from "../context/AuthContext.tsx";
 import {Navigate} from "react-router-dom";
 
 // @ts-ignore
-const  ProtectedRoutes=({children,allowRoutes})=>{
-const{token,role}=useContext<any>(authContext);
+const  ProtectedRoutes=({children,allowRoles})=>{
 
-const isAllowed=allowRoutes.includes(role);
+    const {token,role}=useContext(authContext);
 
-const accessibleRoutes= token && isAllowed ? children : <Navigate to={"/login"} replace={true}/>
+    const  isAllowed= allowRoles.includes(role)
+    const accessibleRoute= token && isAllowed ? children :<Navigate to={"/login"} replace={true}/>
 
-    return accessibleRoutes;
+    return accessibleRoute;
 
 }
 export  default ProtectedRoutes;
