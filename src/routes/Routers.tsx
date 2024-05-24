@@ -6,6 +6,8 @@ import Login from "../pages/Login.tsx";
 import SignUp from "../pages/SignUp.tsx";
 import Contact from "../pages/Contact.tsx";
 import Service from "../pages/Service.tsx";
+import MyAccount from "../dashboard/user-account/MyAccount.tsx";
+import Dashboard from "../dashboard/doctor-account/Dashboard.tsx";
 
 
 
@@ -21,6 +23,8 @@ const routers  =()=>{
                       <Route path="/register"  element={<SignUp/>} />
                       <Route path="/contact"  element={<Contact/>} />
                       <Route path="/service"  element={<Service/>} />
+                      <Route path="/users/profile/me"  element={<MyAccount/>} />
+                      <Route path="/doctors/profile/me"  element={<Dashboard/>} />
                   </Routes>
             </div>
         )
