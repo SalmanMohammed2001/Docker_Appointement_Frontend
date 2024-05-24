@@ -1,7 +1,14 @@
 import {useState} from "react";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import axios from "axios";
+import {BASE_URL} from "../config.ts";
+import {toast} from "react-toastify";
+import {a} from "vite/dist/node/types.d-aGj9QkWt";
 
 const Login = () => {
+
+    const navigate=useNavigate();
+    const[loading,setLoading]=useState(false)
 
     const [formData, setFormData] = useState({
         email:'',
@@ -13,6 +20,34 @@ const Login = () => {
 
     }
 
+    const submitHandle = async (event: { preventDefault: () => void; }) => {
+        event.preventDefault()
+        setLoading(true)
+
+        try{
+        const res=    await axios.post(`${BASE_URL}/auth/login`,formData,{
+                headers:{
+                    'Content-Type': 'application/json'
+                }
+            })
+
+            if(res.status != 200){
+                throw new Error(res.data.message)
+            }
+            setLoading(false);
+            toast.success(res.data.message);
+            console.log(res.data.data)
+            navigate("/home")
+
+        }catch (error:any){
+            return toast.error("user not found")
+        }
+
+
+    }
+
+
+
         return(
             <section>
                 <div className={" w-full max-w-[570px] mx-auto  p-5 rounded-md shadow-md md:p-10 "}>
@@ -20,7 +55,7 @@ const Login = () => {
                         className={"text-primaryColor"}>Welcome</span> Back </h1>
 
 
-                    <form action="">
+                    <form action="" >
                         <div className={"mb-5"}>
                             <input type="email" placeholder={"Enter the email"} name={"email"} value={formData.email}
                                    onChange={handleInputChange}
@@ -44,6 +79,7 @@ const Login = () => {
 
                         <div className={"mt-7"}>
                             <button type={"submit"}
+                                    onClick={submitHandle}
                                     className={"w-full  text-[18px] py-3 px-5 bg-primaryColor text-white rounded-md"}>Login
                             </button>
                         </div>
