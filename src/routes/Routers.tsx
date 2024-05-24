@@ -8,6 +8,7 @@ import Contact from "../pages/Contact.tsx";
 import Service from "../pages/Service.tsx";
 import MyAccount from "../dashboard/user-account/MyAccount.tsx";
 import Dashboard from "../dashboard/doctor-account/Dashboard.tsx";
+import ProtectedRoutes from "./ProtectedRoutes.tsx";
 
 
 
@@ -23,8 +24,8 @@ const routers  =()=>{
                       <Route path="/register"  element={<SignUp/>} />
                       <Route path="/contact"  element={<Contact/>} />
                       <Route path="/service"  element={<Service/>} />
-                      <Route path="/users/profile/me"  element={<MyAccount/>} />
-                      <Route path="/doctors/profile/me"  element={<Dashboard/>} />
+                      <Route path="/users/profile/me"  element={<ProtectedRoutes allowRoutes={['patient']}> <MyAccount/> </ProtectedRoutes> } />
+                      <Route path="/doctors/profile/me"  element={ <ProtectedRoutes allowRoutes={['doctor']}> <Dashboard/> </ProtectedRoutes>} />
                   </Routes>
             </div>
         )
