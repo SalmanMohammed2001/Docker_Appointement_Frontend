@@ -12,6 +12,7 @@ const Login = () => {
         setFormData({...formData, [e.target.name]: e.target.value});
 
     }
+
         return(
             <section>
                 <div className={" w-full max-w-[570px] mx-auto  p-5 rounded-md shadow-md md:p-10 "}>

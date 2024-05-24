@@ -1,6 +1,5 @@
 import signup from '../assets/images/signup.gif'
 import {Link, useNavigate} from "react-router-dom";
-import avatar from '../assets/images/avatar-icon.png'
 import {useState} from "react";
 import axios from 'axios'
 import uploadImageCloudinary from "../utils/uploadImageCloudinary.ts";
