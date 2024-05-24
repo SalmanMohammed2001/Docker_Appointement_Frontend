@@ -2,7 +2,8 @@ import logo from "../../assets/images/logo.png"
 import userImg from "../../assets/images/doctor-img01.png"
 import {BiMenu} from  "react-icons/bi";
 import {Link, NavLink} from "react-router-dom";
-import {useEffect, useRef} from "react";
+import {useContext, useEffect, useRef} from "react";
+import {authContext} from "../../context/AuthContext.tsx";
 
 
 const navLinks = [
@@ -31,6 +32,7 @@ const Header = () => {
 
     const headerRef=useRef(null);
     const menuRef=useRef<any>(null);
+    const{user,role,token}=useContext<any>(authContext);
 
 
     const handleMenuClick = () => {
@@ -56,6 +58,7 @@ const Header = () => {
         menuRef.current.classList.toggle('show_menu')
     }
 
+    // @ts-ignore
     return (
         <header className={"header  flex items-center"} ref={headerRef}>
             <div className=" container ">
@@ -82,19 +85,24 @@ const Header = () => {
 
                     {/*========nav right========================*/}
                     <div className={"flex items-center gap-4"}>
-                        <div className={"hidden"}>
-                            <Link to={"/"}>
-                                <figure className={"w-[35px] h-[35px] rounded-full cursor-pointer"}>
-                                    <img src={userImg} alt="" className={"rounded-full w-full"}/>
-                                </figure>
-                            </Link>
-                        </div>
 
-                        <Link to={"/login"}>
-                            <button
-                                className={"bg-primaryColor text-white py-2 px-6 font-[600] rounded-[50px] flex items-center justify-center h-[44px]"}>Login
-                            </button>
-                        </Link>
+                        {
+                            user && token ? <div>
+                                <Link to={`${role =='doctor' ? '/doctors/profile/me' : '/users/profile/me'}`}>
+                                    <figure className={"w-[35px] h-[35px] rounded-full cursor-pointer"}>
+                                        <img src={user?.photo} alt="" className={"rounded-full w-full"}/>
+                                    </figure>
+                                    <h2>{user?.name}</h2>
+                                </Link>
+                            </div> :  <Link to={"/login"}>
+                                <button
+                                    className={"bg-primaryColor text-white py-2 px-6 font-[600] rounded-[50px] flex items-center justify-center h-[44px]"}>Login
+                                </button>
+                            </Link>
+                        }
+
+                        {/*<h1>{user.name}</h1>*/}
+
                         <div className={"md:hidden"} onClick={toggleMenu}>
                             <BiMenu className={"w-6 h-6 cursor-pointer"}/>
                         </div>

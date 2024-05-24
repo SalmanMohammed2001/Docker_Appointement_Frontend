@@ -40,6 +40,8 @@ const SignUp = () => {
         event.preventDefault()
         setLoading(true);
 
+        console.log(formData)
+
 
         try{
        const   res  =   await  axios.post(`${BASE_URL}/auth/register`,formData,{

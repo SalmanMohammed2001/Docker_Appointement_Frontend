@@ -4,6 +4,7 @@ import axios from "axios";
 import {BASE_URL} from "../config.ts";
 import {toast} from "react-toastify";
 import {authContext} from "../context/AuthContext.tsx";
+import {HashLoader} from "react-spinners";
 
 
 const Login = () => {
@@ -93,7 +94,8 @@ const Login = () => {
                     <div className={"mt-7"}>
                         <button type={"submit"}
                                 onClick={submitHandle}
-                                className={"w-full  text-[18px] py-3 px-5 bg-primaryColor text-white rounded-md"}>Login
+                                className={"w-full  text-[18px] py-3 px-5 bg-primaryColor text-white rounded-md"}>
+                            { loading ? <HashLoader size={25} color="#fff"/> : "Login"}
                         </button>
                     </div>
 
