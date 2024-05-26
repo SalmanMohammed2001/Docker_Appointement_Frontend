@@ -1,6 +1,6 @@
  const  MyBooking=()=>{
     return(
-        <div>MyBooking</div>
+        <div>MyBoomnmking</div>
     )
 
  }
