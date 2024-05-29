@@ -7,6 +7,7 @@ import ProfileSetting from "./ProfileSetting.tsx";
 
 import  {BASE_URL} from "../../config.ts";
 import useFetchData from "../../hoocks/useFetchData.tsx";
+import Loading from "../../Loader/Loading.tsx";
 
 
 
@@ -26,7 +27,11 @@ export const MyAccount = () => {
     return (
         <section>
             <div className={"max-w-[1170px] mx-auto px-5 "}>
-                <div className={"grid md:grid-cols-3 gap-10"}>
+
+                {loading &&<Loading/>}
+
+
+                {!loading && !error && <div className={"grid md:grid-cols-3 gap-10"}>
                     <div className={"pb-[50px] px-[30px] rounded-md"}>
                         <div className={"flex items-center justify-center"}>
                             <figure
@@ -74,7 +79,8 @@ export const MyAccount = () => {
                         }
 
                     </div>
-                </div>
+                </div>}
+
             </div>
         </section>
     )
