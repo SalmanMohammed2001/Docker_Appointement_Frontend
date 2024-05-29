@@ -4,9 +4,20 @@ import {authContext} from "../../context/AuthContext.tsx";
 import MyBooking from "./MyBooking.tsx";
 import ProfileSetting from "./ProfileSetting.tsx";
 
+
+import  {BASE_URL} from "../../config.ts";
+import useFetchData from "../../hoocks/useFetchData.tsx";
+
+
+
 export const MyAccount = () => {
     const {dispatch} = useContext(authContext)
     const [tab, setTab] = useState('booking');
+
+
+    const{data:userData,loading,error}=useFetchData(`${BASE_URL}/users/profile/me`)
+
+    console.log(userData)
 
     function handleLogOut() {
         dispatch({type: "LOGIN_OUT"})
